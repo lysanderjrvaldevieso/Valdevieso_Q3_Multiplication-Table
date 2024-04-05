@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+	<html>
+	
+		<head> <title> Multiplication Table </title> </head>
+
+		<body>
+		
+			<table id = "theTable"></table>
+			<button onclick = "table()">Click me!</button>
+			
+			<script>
+			
+			function table(){
+			
+				var num1 = parseInt(prompt("Enter the value of n: "));
+				var num2 = parseInt(prompt("Enter the value of m: "));
+				
+				while ( isNaN(num1) || num1 < 2 || num1 > 10 ) {
+				
+					num1 = parseFloat(prompt("Invalid number please re-enter the value of n: "));
+				
+				}
+				
+				while ( isNaN(num2) || num2 <2 || num1 > 10 ) {
+				
+					num2 = parseFloat(prompt("Invalid number please re-enter the value of m: "));
+				
+				}
+				
+				var table = document.getElementById('theTable');
+				table.innerHTML = '';
+				
+				for (var n1 = 1; n1 <= num1; n1++) {
+				
+					var row = table.insertRow(-1); 
+				
+                for (var n2 = 1; n2 <= num2; n2++) {
+				
+                    var cell = row.insertCell(-1); 
+                    cell.textContent = n1 * n2; 
+				
+				}
+				
+				}
+				
+				}
+				
+			</script>
+		
+		</body>
+	
+	</html>
